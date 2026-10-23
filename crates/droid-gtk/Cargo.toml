@@ -1,0 +1,14 @@
+[package]
+name = "droid-gtk"
+description = "Droid 图形界面（GTK4 + libadwaita）"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+droid-core.workspace = true
+serde_json.workspace = true
+# 功能开关封顶到 Ubuntu 24.04 自带的版本（GTK 4.14、libadwaita 1.5），保证两个 LTS 都能编译。
+gtk = { package = "gtk4", version = "0.11", features = ["v4_14"] }
+adw = { package = "libadwaita", version = "0.9", features = ["v1_5"] }

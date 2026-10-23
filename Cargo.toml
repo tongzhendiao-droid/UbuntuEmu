@@ -1,0 +1,14 @@
+[workspace]
+resolver = "3"
+members = ["crates/droid-core", "crates/droid-cli", "crates/droid-gtk"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+publish = false
+
+[workspace.dependencies]
+droid-core = { path = "crates/droid-core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
